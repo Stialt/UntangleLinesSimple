@@ -169,7 +169,7 @@ namespace UntangleLines
 
         public void createPuzzle()
         {
-            points = initPoints(400, N, new Point(250, 400));
+            points = initPoints(400, N, new Point(250, 350));
 
             if (isDebug)
             {
@@ -582,5 +582,9 @@ namespace UntangleLines
             return (int)(Math.Pow(x.X - y.X, 2) + Math.Pow(x.Y - y.Y, 2));
         }
 
+        private void labelInitState_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

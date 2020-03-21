@@ -39,9 +39,10 @@ namespace UntangleLines
             // 
             // buttonStart
             // 
-            this.buttonStart.Location = new System.Drawing.Point(114, 72);
+            this.buttonStart.Location = new System.Drawing.Point(86, 58);
+            this.buttonStart.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonStart.Name = "buttonStart";
-            this.buttonStart.Size = new System.Drawing.Size(75, 23);
+            this.buttonStart.Size = new System.Drawing.Size(56, 19);
             this.buttonStart.TabIndex = 0;
             this.buttonStart.Text = "Start";
             this.buttonStart.UseVisualStyleBackColor = true;
@@ -50,15 +51,17 @@ namespace UntangleLines
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(73, 24);
+            this.label1.Location = new System.Drawing.Point(55, 20);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(156, 17);
+            this.label1.Size = new System.Drawing.Size(116, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "Choose Difficulty (5-30)";
             // 
             // numericUpDownN
             // 
-            this.numericUpDownN.Location = new System.Drawing.Point(93, 44);
+            this.numericUpDownN.Location = new System.Drawing.Point(70, 36);
+            this.numericUpDownN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.numericUpDownN.Maximum = new decimal(new int[] {
             30,
             0,
@@ -70,7 +73,7 @@ namespace UntangleLines
             0,
             0});
             this.numericUpDownN.Name = "numericUpDownN";
-            this.numericUpDownN.Size = new System.Drawing.Size(120, 22);
+            this.numericUpDownN.Size = new System.Drawing.Size(90, 20);
             this.numericUpDownN.TabIndex = 3;
             this.numericUpDownN.Value = new decimal(new int[] {
             5,
@@ -81,9 +84,10 @@ namespace UntangleLines
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(378, 44);
+            this.checkBox1.Location = new System.Drawing.Point(284, 36);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(132, 21);
+            this.checkBox1.Size = new System.Drawing.Size(105, 17);
             this.checkBox1.TabIndex = 4;
             this.checkBox1.Text = "Show initial state";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -92,19 +96,22 @@ namespace UntangleLines
             // labelInitState
             // 
             this.labelInitState.AutoSize = true;
-            this.labelInitState.Location = new System.Drawing.Point(218, 135);
+            this.labelInitState.Location = new System.Drawing.Point(216, 107);
+            this.labelInitState.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelInitState.Name = "labelInitState";
-            this.labelInitState.Size = new System.Drawing.Size(77, 17);
+            this.labelInitState.Size = new System.Drawing.Size(59, 13);
             this.labelInitState.TabIndex = 5;
             this.labelInitState.Text = "Initial State";
             this.labelInitState.Visible = false;
+            this.labelInitState.Click += new System.EventHandler(this.labelInitState_Click);
             // 
             // buttonGiveUp
             // 
             this.buttonGiveUp.Enabled = false;
-            this.buttonGiveUp.Location = new System.Drawing.Point(233, 618);
+            this.buttonGiveUp.Location = new System.Drawing.Point(210, 632);
+            this.buttonGiveUp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonGiveUp.Name = "buttonGiveUp";
-            this.buttonGiveUp.Size = new System.Drawing.Size(75, 23);
+            this.buttonGiveUp.Size = new System.Drawing.Size(80, 19);
             this.buttonGiveUp.TabIndex = 6;
             this.buttonGiveUp.Text = "GIVE UP";
             this.buttonGiveUp.UseVisualStyleBackColor = true;
@@ -112,16 +119,16 @@ namespace UntangleLines
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1062, 675);
+            this.ClientSize = new System.Drawing.Size(1064, 681);
             this.Controls.Add(this.buttonGiveUp);
             this.Controls.Add(this.labelInitState);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.numericUpDownN);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonStart);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
