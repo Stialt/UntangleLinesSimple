@@ -35,13 +35,14 @@ namespace UntangleLines
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.labelInitState = new System.Windows.Forms.Label();
             this.buttonGiveUp = new System.Windows.Forms.Button();
+            this.buttonRestart = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownN)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonStart
             // 
             this.buttonStart.Location = new System.Drawing.Point(86, 58);
-            this.buttonStart.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonStart.Margin = new System.Windows.Forms.Padding(2);
             this.buttonStart.Name = "buttonStart";
             this.buttonStart.Size = new System.Drawing.Size(56, 19);
             this.buttonStart.TabIndex = 0;
@@ -62,7 +63,7 @@ namespace UntangleLines
             // numericUpDownN
             // 
             this.numericUpDownN.Location = new System.Drawing.Point(70, 36);
-            this.numericUpDownN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.numericUpDownN.Margin = new System.Windows.Forms.Padding(2);
             this.numericUpDownN.Maximum = new decimal(new int[] {
             30,
             0,
@@ -86,7 +87,7 @@ namespace UntangleLines
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.Location = new System.Drawing.Point(284, 36);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(105, 17);
             this.checkBox1.TabIndex = 4;
@@ -110,7 +111,7 @@ namespace UntangleLines
             // 
             this.buttonGiveUp.Enabled = false;
             this.buttonGiveUp.Location = new System.Drawing.Point(210, 632);
-            this.buttonGiveUp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonGiveUp.Margin = new System.Windows.Forms.Padding(2);
             this.buttonGiveUp.Name = "buttonGiveUp";
             this.buttonGiveUp.Size = new System.Drawing.Size(80, 19);
             this.buttonGiveUp.TabIndex = 6;
@@ -118,11 +119,22 @@ namespace UntangleLines
             this.buttonGiveUp.UseVisualStyleBackColor = true;
             this.buttonGiveUp.Click += new System.EventHandler(this.buttonGiveUp_Click);
             // 
+            // buttonRestart
+            // 
+            this.buttonRestart.Location = new System.Drawing.Point(314, 632);
+            this.buttonRestart.Name = "buttonRestart";
+            this.buttonRestart.Size = new System.Drawing.Size(75, 23);
+            this.buttonRestart.TabIndex = 7;
+            this.buttonRestart.Text = "RESTART";
+            this.buttonRestart.UseVisualStyleBackColor = true;
+            this.buttonRestart.Click += new System.EventHandler(this.buttonRestart_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1064, 681);
+            this.Controls.Add(this.buttonRestart);
             this.Controls.Add(this.buttonGiveUp);
             this.Controls.Add(this.labelInitState);
             this.Controls.Add(this.checkBox1);
@@ -130,7 +142,7 @@ namespace UntangleLines
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonStart);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Untangle Lines";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
@@ -151,6 +163,7 @@ namespace UntangleLines
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label labelInitState;
         private System.Windows.Forms.Button buttonGiveUp;
+        private System.Windows.Forms.Button buttonRestart;
     }
 }
 
