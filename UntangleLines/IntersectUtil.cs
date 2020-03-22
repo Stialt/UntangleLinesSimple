@@ -97,6 +97,43 @@ namespace UntangleLines
             return false;
         }
 
+        public static int[,] getIntersectMap(int[,] Edges, myPoint[] points, int N)
+        {
+            int[,] Map = new int[N, N];
+            for (int i = 0; i < N; i++)
+            {
+                for (int j = 0; j < N; j++)
+                {
+                    if (Edges[i, j] == 1)
+                    {
+                        for (int k = 0; k < N; k++)
+                        {
+                            for (int l = 0; l < N; l++)
+                            {
+                                //If not same edge
+                                if (k == i && l == j || k == j && l == i) continue;
+
+                                //If share point
+                                if (i == k || i == l || j == k || j == l) continue;
+
+                                //If edge exists
+                                if (Edges[k, l] == 1)
+                                {
+                                    //Check intersection
+                                    if (doIntersect(points[i], points[j], points[k], points[l]))
+                                    {
+                                        Map[i, j] = Map[k, l] = Map[j, i] = Map[l, k] = 1;
+                                        
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            return Map;
+        }
+
         public static int distSqr(Point x, Point y)
         {
             return (int)(Math.Pow(x.X - y.X, 2) + Math.Pow(x.Y - y.Y, 2));

@@ -56,7 +56,9 @@ namespace UntangleLines
             Brush myBrush = new SolidBrush(Color.Black);
 
             if (isShowInit) drawGraph(g, puzzle.points, puzzle.Edges);
-            drawGraph(g, puzzle.randomPoints, puzzle.Edges);
+            //drawGraph(g, puzzle.randomPoints, puzzle.Edges);
+            //puzzle.getIntersectMap();
+            drawGraphColored(g, puzzle.randomPoints, puzzle.Edges, puzzle.getIntersectMap());
         }
         
         private void Form1_MouseDown(object sender, MouseEventArgs e)
@@ -221,11 +223,12 @@ namespace UntangleLines
         public void drawLine(Graphics g, myPoint x, myPoint y)
         {
             Pen myPen = new Pen(Color.Black);
-            /*Console.WriteLine("\nDrawing line between:");
-            x.print();
-            y.print();
-            Console.WriteLine(x.getPoint().X + " " + x.getPoint().Y + " " + y.getPoint().X + " " + y.getPoint().Y);
-            */
+            g.DrawLine(myPen, x.getPoint(), y.getPoint());
+        }
+
+        public void drawRedLine(Graphics g, myPoint x, myPoint y)
+        {
+            Pen myPen = new Pen(Color.Red);
             g.DrawLine(myPen, x.getPoint(), y.getPoint());
         }
 
@@ -253,6 +256,28 @@ namespace UntangleLines
             }
         }
 
+        public void drawGraphColored(Graphics g, myPoint[] points, int[,] Edges, int[,] IntersectMap)
+        {
+            for (int i = 0; i < N; i++)
+            {
+                drawPoint(g, points[i]);
+            }
+
+
+            for (int i = 0; i < N; i++)
+            {
+                for (int j = i + 1; j < N; j++)
+                {
+                    if (Edges[i, j] == 1)
+                    {
+                        if (IntersectMap[i, j] == 1)
+                            drawRedLine(g, points[i], points[j]);
+                        else
+                            drawLine(g, points[i], points[j]);
+                    }
+                }
+            }
+        }
 
 
         private void labelInitState_Click(object sender, EventArgs e){}

@@ -18,6 +18,7 @@ namespace UntangleLines
         public myPoint[] points;
         public int[,] Edges;
         public myPoint[] randomPoints;
+        public int[,] EdgesIntersectionMap;
 
 
         //Global Random Generator
@@ -25,7 +26,16 @@ namespace UntangleLines
 
         public Puzzle()
         {
+            points = new myPoint[N];
+            Edges = new int[N, N];
+            randomPoints = new myPoint[N];
+            EdgesIntersectionMap = new int[N, N];
+        }
 
+        public int[,] getIntersectMap()
+        {
+            EdgesIntersectionMap = IntersectUtil.getIntersectMap(Edges, randomPoints, N);
+            return EdgesIntersectionMap;
         }
 
         public void createPuzzle(int N)
