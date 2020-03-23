@@ -121,6 +121,7 @@ namespace UntangleLines
             // 
             // buttonRestart
             // 
+            this.buttonRestart.Enabled = false;
             this.buttonRestart.Location = new System.Drawing.Point(314, 632);
             this.buttonRestart.Name = "buttonRestart";
             this.buttonRestart.Size = new System.Drawing.Size(75, 23);

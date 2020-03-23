@@ -142,6 +142,7 @@ namespace UntangleLines
                     buttonStart.Enabled = false;
                     buttonGiveUp.Enabled = true;
                     numericUpDownN.Enabled = false;
+                    buttonRestart.Enabled = true;
                 }
             }
             else
@@ -156,6 +157,23 @@ namespace UntangleLines
                 playState = PLAYING;
                 buttonGiveUp.Enabled = true;
             }
+        }
+
+        private void buttonRestart_Click(object sender, EventArgs e)
+        {
+            buttonStart.Enabled = true;
+
+            N = Convert.ToInt32(numericUpDownN.Value);
+            puzzle.N = N;
+
+            puzzle.createPuzzle(N);
+
+            Invalidate();
+            playState = PLAYING;
+            checkBox1.Enabled = false;
+            buttonStart.Enabled = false;
+            buttonGiveUp.Enabled = true;
+            numericUpDownN.Enabled = false;
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -282,12 +300,5 @@ namespace UntangleLines
 
         private void labelInitState_Click(object sender, EventArgs e){}
 
-        private void buttonRestart_Click(object sender, EventArgs e)
-        {
-            buttonStart.Enabled = true;
-            puzzle.createPuzzle(N);
-
-            Invalidate();
-        }
     }
 }
